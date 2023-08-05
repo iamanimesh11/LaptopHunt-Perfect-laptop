@@ -4,6 +4,28 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pickle
 import sklearn
+st.set_page_config(page_title='LaptopsHunt-smartLapPrix',page_icon="💻")
+# Add JavaScript to hide the GitHub icon
+hide_github_icon_js = """
+<style>
+#MainMenu {
+    display: none;
+}
+button.css-ch5dnh {
+    display: none;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toolbar = document.querySelector('[data-testid="stToolbar"]');
+    if (toolbar) {
+        toolbar.style.display = 'none';
+    }
+});
+</script>
+"""
+st.markdown(hide_github_icon_js, unsafe_allow_html=True)
+
 
 dataset = pd.read_csv('FullDataset_Laptop.csv')
 dataset.drop_duplicates(subset=['name of laptop'], inplace=True)
